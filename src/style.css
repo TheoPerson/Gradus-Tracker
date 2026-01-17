@@ -1,0 +1,529 @@
+/* ===================================
+   Gradus Tracker - League Challenges Style
+   Based on Rareness Design System (2026)
+   =================================== */
+
+:root {
+  /* ===================================
+     BRAND COLORS (From Rareness)
+     =================================== */
+
+  /* Brand Gold (Primary) */
+  --brand-gold: #c89b3c;
+  --brand-gold-light: #e4c084;
+  --brand-gold-dark: #9b7935;
+  --brand-gold-glow: #f0d98f;
+
+  /* Brand Blue (Secondary) */
+  --brand-blue: #1e3a8a;
+  --brand-blue-accent: #2563eb;
+  --brand-blue-dark: #1e293b;
+
+  /* Brand Backgrounds */
+  --brand-navy: #0a0e1b;
+  --brand-charcoal: #1c2333;
+  --brand-slate: #282e45;
+
+  /* Legacy Aliases (For Compatibility) */
+  --primary: var(--brand-gold);
+  --primary-dark: #785a28;
+  --primary-light: #f0e6d2;
+
+  --bg-primary: var(--brand-navy);
+  --bg-secondary: var(--brand-charcoal);
+  --bg-tertiary: var(--brand-slate);
+
+  --text-primary: #f0e6d2;
+  --text-secondary: #a09b8c;
+  --text-muted: #5b5a56;
+
+  --accent-blue: #0ac8b9;
+  --accent-purple: #c89bff;
+  --accent-red: #e84057;
+
+  /* Tier Colors */
+  --tier-unranked: #4a4a4a;
+  --tier-iron: #6c6c6c;
+  --tier-bronze: #8b4513;
+  --tier-silver: #c0c0c0;
+  --tier-gold: #ffd700;
+  --tier-platinum: #2ecc71;
+  --tier-diamond: #3498db;
+  --tier-master: #9b59b6;
+  --tier-grandmaster: #e74c3c;
+  --tier-challenger: #f39c12;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================
+   Font Faces (League Fonts)
+   =================================== */
+
+@font-face {
+  font-family: "BeaufortforLOL";
+  src: url("./fonts/BeaufortforLOL-Regular.ttf");
+}
+
+@font-face {
+  font-family: "BeaufortforLOL Bold";
+  src: url("./fonts/BeaufortforLOL-Bold.ttf");
+}
+
+@font-face {
+  font-family: "BeaufortforLOL Medium";
+  src: url("./fonts/BeaufortforLOL-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Spiegel";
+  src: url("./fonts/Spiegel_TT_Regular.ttf");
+}
+
+/* ===================================
+   Reset & Base Styles
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Spiegel", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(200, 155, 60, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(10, 200, 185, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
+  animation: bgPulse 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h1,
+h2,
+h3 {
+  font-family: "BeaufortforLOL Bold", serif;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+/* ===================================
+   League UI Components
+   =================================== */
+
+.league-button {
+  font-family: "Spiegel", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: rgba(28, 35, 51, 0.6);
+  color: var(--primary);
+  border: 2px solid var(--primary-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.league-button:hover {
+  background: linear-gradient(to bottom, var(--bg-secondary), #433d2b);
+  box-shadow: 0 0 15px rgba(200, 155, 60, 0.3);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.league-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.league-select,
+.league-input {
+  font-family: "Spiegel", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(28, 35, 51, 0.6);
+  color: var(--text-primary);
+  border: 2px solid rgba(240, 230, 210, 0.1);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.league-select:focus,
+.league-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(200, 155, 60, 0.1);
+}
+
+.league-select:hover,
+.league-input:hover {
+  border-color: var(--primary-dark);
+  background: rgba(28, 35, 51, 0.8);
+}
+
+.league-select > option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: "Spiegel", sans-serif;
+}
+
+.league-input::placeholder {
+  color: var(--text-muted);
+}
+
+.league-input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+/* ===================================
+   Challenge Components
+   =================================== */
+
+.app {
+  background: transparent;
+  border-top: solid 2px var(--primary-dark);
+  position: relative;
+  padding: var(--spacing-lg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-heading {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  width: 300px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border: solid 2px transparent;
+  transition: all var(--transition-fast);
+}
+
+.tab:hover,
+.tab.selected {
+  border-bottom: solid 2px var(--primary-dark);
+  border-right: solid 2px var(--primary-dark);
+}
+
+.challenges > * {
+  margin-bottom: var(--spacing-xl);
+}
+
+button.settings-button {
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  font-size: 16px;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(28, 35, 51, 0.8);
+  border: 2px solid var(--primary-dark);
+  color: var(--primary);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+button.settings-button:hover {
+  background: var(--primary);
+  color: var(--bg-primary);
+  transform: rotate(90deg);
+  box-shadow: 0 0 20px rgba(200, 155, 60, 0.4);
+}
+
+/* ===================================
+   Progress Bars
+   =================================== */
+
+.challenge-progress {
+  position: relative;
+  height: 8px;
+  background: rgba(28, 35, 51, 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 230, 210, 0.1);
+}
+
+.challenge-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand-gold), var(--accent-blue));
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
+}
+
+/* Tier-specific progress bars */
+.challenge-progress[data-tier="IRON"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-iron), #909090);
+}
+
+.challenge-progress[data-tier="BRONZE"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-bronze), #b8860b);
+}
+
+.challenge-progress[data-tier="SILVER"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-silver), #e8e8e8);
+}
+
+.challenge-progress[data-tier="GOLD"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-gold), #ffed4e);
+}
+
+.challenge-progress[data-tier="PLATINUM"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-platinum), #58d68d);
+}
+
+.challenge-progress[data-tier="DIAMOND"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-diamond), #5dade2);
+}
+
+.challenge-progress[data-tier="MASTER"] .challenge-progress-fill {
+  background: linear-gradient(90deg, var(--tier-master), #bb8fce);
+}
+
+/* ===================================
+   Tier Badges
+   =================================== */
+
+.tier-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  backdrop-filter: blur(10px);
+}
+
+.tier-badge-iron {
+  background: rgba(108, 108, 108, 0.2);
+  color: var(--tier-iron);
+  border-color: var(--tier-iron);
+}
+
+.tier-badge-bronze {
+  background: rgba(139, 69, 19, 0.2);
+  color: var(--tier-bronze);
+  border-color: var(--tier-bronze);
+}
+
+.tier-badge-silver {
+  background: rgba(192, 192, 192, 0.2);
+  color: var(--tier-silver);
+  border-color: var(--tier-silver);
+}
+
+.tier-badge-gold {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--tier-gold);
+  border-color: var(--tier-gold);
+}
+
+.tier-badge-platinum {
+  background: rgba(46, 204, 113, 0.2);
+  color: var(--tier-platinum);
+  border-color: var(--tier-platinum);
+}
+
+.tier-badge-diamond {
+  background: rgba(52, 152, 219, 0.2);
+  color: var(--tier-diamond);
+  border-color: var(--tier-diamond);
+}
+
+.tier-badge-master {
+  background: rgba(155, 89, 182, 0.2);
+  color: var(--tier-master);
+  border-color: var(--tier-master);
+}
+
+/* ===================================
+   Scrollbar
+   =================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ===================================
+   Animations
+   =================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Micro-interactions */
+.interactive-hover {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.interactive-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.interactive-hover:active {
+  transform: translateY(-1px);
+}
+
+/* Pulse Animation for buttons */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(200, 155, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0); }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse-gold 1.5s infinite;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+
+@media (max-width: 768px) {
+  .app {
+    padding: var(--spacing-md);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .app-heading {
+    width: 100%;
+  }
+}
