@@ -1,61 +1,40 @@
 <div align="center">
-  <h1>📈 Gradus Tracker</h1>
-  <p>A modern tracking web application built with React, Vite, and TypeScript.</p>
+  <h1 align="center">Gradus Tracker</h1>
+  <p align="center">
+    <i>A modern tracking web app powered by React and Vite.</i>
+  </p>
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/github/last-commit/TheoPerson/Gradus-Tracker?style=flat-square&color=61DAFB" alt="Last Commit" />
-  <img src="https://img.shields.io/github/repo-size/TheoPerson/Gradus-Tracker?style=flat-square&color=61DAFB" alt="Repo Size" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/github/last-commit/TheoPerson/Gradus-Tracker?style=for-the-badge&color=121212&logoColor=white" alt="Last Commit" />
+  <img src="https://img.shields.io/badge/Vite-121212?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/TypeScript-121212?style=for-the-badge&logo=typescript&logoColor=white" alt="TS" />
 </div>
 
-<br />
+<br><br>
 
-## 📖 Overview
+> **Overview**
+> Gradus Tracker is a high-performance web application built with React, Vite, and TypeScript, designed to track analytics efficiently.
 
-**Gradus Tracker** is a blazing-fast, modern web application designed for tracking and analytics. Built using the latest frontend technologies—React, Vite, and TypeScript—it offers a seamless developer experience and exceptional runtime performance.
+<br>
 
-## 🚀 Getting Started
+### ✦ Features
+- **Modern Stack:** React + Vite + TypeScript.
+- **Fast Build Times:** Powered by esbuild.
+- **Minimalist Aesthetic:** Clean UI components.
 
-### Prerequisites
+<br>
 
-- [Node.js](https://nodejs.org/) installed
-- `npm` or `yarn` installed
+### ✦ Quick Start
 
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/TheoPerson/Gradus-Tracker.git
-   cd Gradus-Tracker
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   The app will be available at `http://localhost:5173`.
-
-### Building for Production
-
-To create a production-ready build:
 ```bash
-npm run build
+git clone https://github.com/TheoPerson/Gradus-Tracker.git
+cd Gradus-Tracker
+npm install
+npm run dev
 ```
 
-## 🛠️ Tech Stack
-
-- **React:** UI Framework
-- **Vite:** Next Generation Frontend Tooling
-- **TypeScript:** Typed JavaScript
-
----
+<br><br>
 <div align="center">
-  <i>Developed by Théo 'JUG'</i>
+  <p><sup>Developed by Théo 'JUG'</sup></p>
 </div>
