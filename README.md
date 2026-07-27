@@ -1,64 +1,61 @@
-# Gradus
+<div align="center">
+  <h1>📈 Gradus Tracker</h1>
+  <p>A modern tracking web application built with React, Vite, and TypeScript.</p>
+</div>
 
-**The Ultimate League of Legends Data Encyclopedia**
+<div align="center">
+  <img src="https://img.shields.io/github/last-commit/TheoPerson/Gradus-Tracker?style=flat-square&color=61DAFB" alt="Last Commit" />
+  <img src="https://img.shields.io/github/repo-size/TheoPerson/Gradus-Tracker?style=flat-square&color=61DAFB" alt="Repo Size" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+</div>
 
-Gradus is the modern web interface powered by **Gradus DB**, providing a comprehensive exploration of League of Legends content.
+<br />
 
-## 🏛️ Architecture
+## 📖 Overview
 
-### **Gradus** (Frontend)
+**Gradus Tracker** is a blazing-fast, modern web application designed for tracking and analytics. Built using the latest frontend technologies—React, Vite, and TypeScript—it offers a seamless developer experience and exceptional runtime performance.
 
-The beautiful, glassmorphic web interface built with Vue 3 and TypeScript. It provides the visual experience for:
+## 🚀 Getting Started
 
-- ⚔️ **Champions** - Detailed stats & abilities
-- 🎨 **Skins** - Splash arts & rarity tracking
-- ⚡ **Items** - Build paths & analytics
-- 🔮 **Runes** - Interactive rune trees
-- 🏆 **Challenges** - Tracking system
+### Prerequisites
 
-### **Gradus DB** (Data Layer)
+- [Node.js](https://nodejs.org/) installed
+- `npm` or `yarn` installed
 
-The robust, hidden backend service layer connecting to Riot's infrastructure:
+### Installation
 
-- **Data Dragon Connector** (`versionService.ts`) - Auto-updates to latest patch (26.1.1+)
-- **Community Dragon** - Asset retrieval for unlisted resources
-- **Services** - Optimized API handling for Champions, Spells, Icons, and Wards
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/TheoPerson/Gradus-Tracker.git
+   cd Gradus-Tracker
+   ```
 
-## 🌟 Features
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- **170+ Champions**
-- **1,600+ Skins**
-- **200+ Items**
-- **60+ Runes**
-- **2,800+ Challenges**
-- **500+ Emotes**
-- **100+ Ward Skins**
-- **1,000+ Icons**
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:5173`.
 
-## 🚀 Tech Stack
+### Building for Production
 
-- **Vue 3** - Progressive JavaScript framework
-- **TypeScript** - Type-safe development
-- **Vite** - Lightning-fast build tool
-- **Gradus DB** - Computed data services
-
-## 📦 Development
-
+To create a production-ready build:
 ```bash
-# Install dependencies
-npm install
-
-# Start Gradus (Website)
-npm run dev
-
-# Build for production
 npm run build
 ```
 
-## 🌐 Deployment
+## 🛠️ Tech Stack
 
-Optimized for Vercel, Netlify, or any static hosting.
+- **React:** UI Framework
+- **Vite:** Next Generation Frontend Tooling
+- **TypeScript:** Typed JavaScript
 
-## ⚖️ Legal
-
-Gradus isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+---
+<div align="center">
+  <i>Developed by Théo 'JUG'</i>
+</div>
